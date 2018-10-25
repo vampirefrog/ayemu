@@ -1,0 +1,5 @@
+*.o
+test
+*.sublime-workspace
+misc/
+z80emu/testfiles/

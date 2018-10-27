@@ -67,6 +67,7 @@ uint16_t *ay_file_get_song_addresses(struct ay_file *f, struct ay_file_song_data
 	return ofs ? (uint16_t *)(ptr + ofs) : 0;
 }
 
+#ifndef __EMSCRIPTEN__
 void ay_file_dump(struct ay_file *f) {
 	printf("file_version=%d\n", f->file_version);
 	printf("player_version=%d\n", f->player_version);
@@ -101,3 +102,4 @@ void ay_file_dump(struct ay_file *f) {
 		}
 	}
 }
+#endif

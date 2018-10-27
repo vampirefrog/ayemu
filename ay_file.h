@@ -42,4 +42,7 @@ struct ay_file_song_data *ay_file_get_song_data(struct ay_file *f, int s);
 char *ay_file_get_song_name(struct ay_file *f, int s);
 struct ay_file_point *ay_file_get_song_point(struct ay_file *f, struct ay_file_song_data *sd);
 uint16_t *ay_file_get_song_addresses(struct ay_file *f, struct ay_file_song_data *sd);
+
+#ifndef __EMSCRIPTEN__
 void ay_file_dump(struct ay_file *f);
+#endif

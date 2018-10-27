@@ -103,8 +103,10 @@ static int ay_player_render_tstates(struct ay_player *p, int tstates) {
 	if(samples > 0) {
 		int32_t *buf[2] = { p->bufL, p->bufR };
 		PSG_calc_stereo(&p->psg, buf, samples);
+#ifndef __EMSCRIPTEN__
 		if(p->logger)
 			vgm_logger_wait(p->logger, samples);
+#endif
 
 		for(int i = 0; i < samples; i++) {
 			int x;

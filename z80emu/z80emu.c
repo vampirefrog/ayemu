@@ -262,7 +262,6 @@ static int emulate (Z80_STATE * state,
 	int elapsed_cycles, int number_cycles,
 	void *context)
 {
-	int b1, b2;
 	int	pc, r;
 
 	pc = state->pc;
@@ -282,9 +281,6 @@ start_emulation:
 		registers = state->register_table;
 
 emulate_next_opcode:
-
-		Z80_FETCH_BYTE(pc, b1);
-		Z80_FETCH_BYTE(pc+1, b2);
 
 		instruction = INSTRUCTION_TABLE[opcode];
 

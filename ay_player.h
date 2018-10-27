@@ -24,6 +24,7 @@ struct ay_player {
 	int64_t prev_tstates; /* for computing tstates elapsed since last OUT cb */
 	uint8_t addr_latch;
 	uint8_t beeper;
+	int ended;
 };
 
 int ay_player_init(struct ay_player *, int sample_rate);
